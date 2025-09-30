@@ -152,15 +152,108 @@ body {
     .container { padding-top: 1rem; }
     .my-5 { margin-top: 2rem !important; margin-bottom: 2rem !important; }
     .btn-lg { padding: 0.75rem 1.25rem; font-size: 1rem; }
-    .hero-section { height: 50vh; min-height: 320px; }
-    .hero-banner { width: 100%; height: 100%; object-fit: cover; }
-    .hero-logo { max-width: 260px; }
-    .hero-title { font-size: 1.6rem; text-align: left; }
-    .hero-social { gap: 12px; }
-    .hero-social-link { width: 44px; height: 44px; font-size: 1.2rem; }
-    .hero-row { flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
-    .hero-left, .hero-right, .hero-center { flex: unset !important; width: 100%; }
-    .hero-right .hero-title { margin-left: 0; }
+    
+    /* Hero mobile: layout lado a lado mais compacto */
+    .hero-section { 
+        height: 45vh; 
+        min-height: 350px;
+        padding: 1rem 0;
+    }
+    
+    .hero-banner { 
+        width: 100%; 
+        height: 100%; 
+        object-fit: cover; 
+        object-position: center;
+    }
+    
+    /* Layout horizontal compacto no mobile */
+    .hero-row { 
+        flex-direction: row !important; /* Força horizontal */
+        align-items: center; 
+        gap: 1rem;
+        justify-content: space-between;
+        height: 100%;
+        padding: 0 1rem;
+    }
+    
+    /* Logo à esquerda - mais compacto */
+    .hero-left { 
+        flex: 0 0 35% !important; /* Logo ocupa 35% */
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    .hero-logo { 
+        max-width: 120px; /* Logo bem menor */
+        width: 100%;
+    }
+    
+    /* Título e redes sociais à direita */
+    .hero-right { 
+        flex: 1 1 65% !important; /* Título área ocupa resto */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+    }
+    
+    /* Centro invisível no mobile */
+    .hero-center { 
+        display: none; /* Remove espaçador */
+    }
+    
+    /* Título mobile: menor e à direita */
+    .hero-title { 
+        font-size: 1.8rem; /* Tamanho médio */
+        text-align: right;
+        margin: 0;
+        line-height: 1.1;
+        margin-bottom: 0.8rem;
+    }
+    
+    /* Redes sociais menores e à direita */
+    .hero-social { 
+        gap: 10px; 
+        justify-content: flex-end;
+        margin: 0;
+    }
+    
+    .hero-social-link { 
+        width: 38px; 
+        height: 38px; 
+        font-size: 1.1rem;
+    }
+    
+    /* Container do título e redes sociais */
+    .hero-right .d-flex {
+        align-items: flex-end !important;
+        justify-content: flex-end !important;
+        width: 100%;
+    }
+    
+    /* Ajustar espaços na main mobile */
+    main .bg-light {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+/* Breakpoint intermediário para tablets pequenos */
+@media (max-width: 576px) {
+    .hero-title { 
+        font-size: 1.5rem; /* Ainda menor em telas muito pequenas */
+    }
+    
+    .hero-logo { 
+        max-width: 100px; 
+    }
+    
+    .hero-social-link { 
+        width: 35px; 
+        height: 35px; 
+        font-size: 1rem;
+    }
 }
 
 /* Ícone de seta se mexe um pouco quando passa o mouse */
