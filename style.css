@@ -1,0 +1,210 @@
+/* ESTILOS GERAIS DO SITE */
+
+body {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Fundo claro com leve gradiente */
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Fonte principal */
+}
+
+.container {
+    padding-top: 2rem; /* Espaço em cima dentro dos containers */
+}
+
+/* BOTÕES PRINCIPAIS DOS LINKS */
+.btn-outline-primary {
+    border: 2px solid #031a44; /* Borda azul escura */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 0.72rem 1rem; /* Tamanho interno do botão */
+    transition: all 0.2s ease; /* Animação suave ao passar o mouse */
+    text-decoration: none; /* Remove sublinhado */
+    color: #031a44; /* Texto azul */
+    background-color: white; /* Fundo branco sólido */
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; /* Fonte */
+    font-weight: 500; /* Peso do texto */
+    font-size: 0.95rem; /* Tamanho do texto */
+}
+
+.btn-outline-primary:hover {
+    background-color: #031a44; /* Quando passa o mouse: fundo azul */
+    border-color: #031a44; /* Borda também azul */
+    color: white; /* Texto fica branco */
+}
+
+/* TAMANHO DOS ÍCONES */
+.bi {
+    font-size: 1.1em; /* Ícones um pouco maiores que o texto */
+}
+
+/* ÁREA DO HERO (TOPO COM LOGO E TÍTULO) */
+.hero-section {
+    height: 60vh; /* Ocupa 60% da altura da tela */
+    min-height: 500px; /* Nunca fica menor que 500px */
+    width: 100%; /* 100% da largura */
+    display: flex; /* Flexbox para centralizar */
+    align-items: center; /* Centraliza vertical */
+    justify-content: center; /* Centraliza horizontal */
+    background: linear-gradient(135deg, #031a44 0%, #0d2d5c 50%, #031a44 100%); /* Fundo em azul com gradiente */
+    position: relative; /* Para posicionar elementos dentro (banner) */
+    overflow: hidden; /* Esconde o que passar da área */
+}
+
+.hero-section::before {
+    content: ''; /* Elemento decorativo */
+    position: absolute; /* Posicionado por cima do fundo */
+    top: 0; left: 0; right: 0; bottom: 0; /* Cobre tudo */
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%); /* Brilho leve */
+    pointer-events: none; /* Não interfere no mouse */
+}
+
+.hero-content {
+    display: flex; /* Flex para alinhar conteúdo */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Fica acima do efeito ::before */
+    position: relative;
+}
+
+.hero-banner {
+    position: absolute; /* Fica atrás do texto */
+    inset: 0; /* Estica nos 4 lados */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cobre toda a área sem distorcer */
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3)); /* Sombra para destacar */
+}
+
+.hero-row {
+    display: flex; /* Linha flex com colunas */
+    align-items: center; /* Alinha verticalmente */
+    width: 100%;
+}
+
+.hero-logo {
+    max-width: 300px; /* Limite máximo do logo */
+    width: 100%;
+    height: auto; /* Mantém proporção */
+    z-index: 3; /* Acima do banner */
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.4)); /* Sombra no logo */
+}
+
+.hero-title {
+    color: #f2cb13 !important; /* Cor do texto (amarelo da marca) */
+    font-size: 4rem; /* Tamanho grande do título */
+    text-align: right; /* Alinhado à direita */
+    font-weight: 900; /* Bem pesado */
+    margin: 0 0 0 1rem; /* Espaço à esquerda do título */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6); /* Sombra para contraste */
+    letter-spacing: 1px; /* Espaçamento entre letras */
+    z-index: 30; /* Fica por cima de tudo */
+}
+
+/* EFEITO DE ENTRADA DO TÍTULO (ANIMAÇÃO SIMPLES) */
+.hero-title {
+    transform: scale(0.96); /* Começa um pouco menor */
+    opacity: 0; /* Invisível no início */
+    transition: transform 0.5s cubic-bezier(.2,.9,.2,1), opacity 0.35s ease; /* Animação suave */
+}
+
+.hero-title.revealed {
+    transform: scale(1); /* Tamanho normal */
+    opacity: 1; /* Aparece */
+}
+
+/* ÍCONES REDES SOCIAIS */
+.hero-social {
+    display: flex;
+    gap: 18px; /* Espaço entre os botões */
+    align-items: center;
+}
+
+.hero-social-link {
+    display: flex; /* Centraliza ícone */
+    align-items: center;
+    justify-content: center;
+    width: 50px; height: 50px; /* Tamanho do quadrado */
+    background: rgba(255, 255, 255, 0.15); /* Fundo translúcido */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borda clara */
+    border-radius: 12px; /* Cantos arredondados */
+    color: white; /* Ícone branco */
+    font-size: 1.5rem; /* Tamanho do ícone */
+    text-decoration: none; /* Sem sublinhado */
+    transition: all 0.3s ease; /* Suavidade no hover */
+    backdrop-filter: blur(10px); /* Efeito vidro */
+}
+
+.hero-social-link:hover {
+    background: rgba(242, 203, 19, 0.8); /* Amarelo forte */
+    border-color: #f2cb13; /* Borda amarela */
+    color: #031a44; /* Ícone fica azul escuro */
+    transform: translateY(-3px); /* Sobe um pouco */
+    box-shadow: 0 8px 25px rgba(242, 203, 19, 0.4); /* Brilho */
+}
+
+/* Botões menores dentro do hero (se usados) */
+.hero-links-list .btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+}
+
+/* AJUSTES QUANDO A TELA É PEQUENA (CELULAR) */
+@media (max-width: 768px) {
+    .container { padding-top: 1rem; }
+    .my-5 { margin-top: 2rem !important; margin-bottom: 2rem !important; }
+    .btn-lg { padding: 0.75rem 1.25rem; font-size: 1rem; }
+    .hero-section { height: 50vh; min-height: 320px; }
+    .hero-banner { width: 100%; height: 100%; object-fit: cover; }
+    .hero-logo { max-width: 260px; }
+    .hero-title { font-size: 1.6rem; text-align: left; }
+    .hero-social { gap: 12px; }
+    .hero-social-link { width: 44px; height: 44px; font-size: 1.2rem; }
+    .hero-row { flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
+    .hero-left, .hero-right, .hero-center { flex: unset !important; width: 100%; }
+    .hero-right .hero-title { margin-left: 0; }
+}
+
+/* Ícone de seta se mexe um pouco quando passa o mouse */
+.btn-outline-primary i.bi-arrow-right { transition: transform 0.3s ease; }
+.btn-outline-primary:hover i.bi-arrow-right { transform: translateX(5px); }
+
+/* Quando o botão recebe foco (teclado) aparece um contorno suave */
+.btn-outline-primary:focus { box-shadow: 0 0 0 0.25rem rgba(3, 26, 68, 0.25); }
+
+/* RODAPÉ (PARTE DE BAIXO) */
+footer {
+    background-color: #031a44; /* Fundo azul escuro */
+    color: white; /* Texto claro */
+}
+
+footer address,
+footer .text-muted,
+footer p,
+footer a { color: rgba(255,255,255,0.95) !important; }
+
+/* FUNDO DA SEÇÃO PRINCIPAL (GRADE DE QUADRADINHOS) */
+main .bg-light {
+    background-color: #f8f9fa !important; /* Fundo claro */
+    background-image: 
+        linear-gradient(90deg, rgba(3, 26, 68, 0.08) 1px, transparent 1px), /* Linhas verticais */
+        linear-gradient(rgba(3, 26, 68, 0.08) 1px, transparent 1px); /* Linhas horizontais */
+    background-size: 20px 20px; /* Tamanho dos quadrados */
+    position: relative; /* Para poder usar pseudo-elementos se quiser depois */
+    padding-bottom: 3rem; /* Espaço extra embaixo antes do rodapé */
+}
+
+main .bg-light::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; }
+
+/* FAIXA AMARELA DE SEPARAÇÃO ENTRE AS SEÇÕES */
+.section-transition {
+    height: 20px; /* Altura da faixa */
+    background: #f2cb13; /* Cor amarela da marca */
+    position: relative; /* Para posicionar o traço decorativo */
+}
+
+.section-transition::after {
+    content: ''; /* Traço decorativo no meio */
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 60px; height: 2px; /* Tamanho da linha */
+    background: linear-gradient(90deg, transparent, rgba(3, 26, 68, 0.2), transparent); /* Linha azul clarinha */
+    border-radius: 2px; /* Bordas arredondadas */
+}
